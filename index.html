@@ -44,14 +44,14 @@
         
         .logo-container {
             margin-bottom: 1.5rem;
-            min-height: 80px;
+            min-height: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         
         .logo {
-            max-height: 100px;
+            max-height: 120px;
             max-width: 100%;
             width: auto;
             object-fit: contain;
@@ -149,7 +149,7 @@
             }
             
             .logo {
-                max-height: 80px;
+                max-height: 90px;
             }
         }
     </style>
@@ -157,11 +157,11 @@
 <body>
     <div class="container">
         <div class="logo-container">
-            <!-- Using Google Drive's direct download link with multiple fallbacks -->
-            <img src="https://drive.google.com/uc?export=download&id=1JXYwS1p88gOT6S03KVgCNRAHvqyhNpEh" 
+            <!-- Using multiple URL formats for maximum compatibility -->
+            <img src="https://drive.google.com/uc?export=view&id=1JXYwS1p88gOT6S03KVgCNRAHvqyhNpEh" 
                  alt="Euler Educators Logo" 
                  class="logo"
-                 onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1JXYwS1p88gOT6S03KVgCNRAHvqyhNpEh&sz=w1000';">
+                 onerror="this.onerror=null;this.src='https://docs.google.com/uc?id=1JXYwS1p88gOT6S03KVgCNRAHvqyhNpEh'">
             <div class="logo-fallback">Euler Educators</div>
         </div>
         
@@ -182,26 +182,46 @@
     </div>
 
     <script>
-        // Enhanced logo loading with multiple fallbacks
+        // Robust logo loading with multiple fallback methods
         document.addEventListener('DOMContentLoaded', function() {
             const logo = document.querySelector('.logo');
             const fallback = document.querySelector('.logo-fallback');
+            const logoId = '1JXYwS1p88gOT6S03KVgCNRAHvqyhNpEh';
             
-            // First check if image loaded successfully
-            setTimeout(function() {
-                if (!logo.complete || logo.naturalWidth === 0) {
-                    // Try alternative Google Drive URL
-                    logo.src = `https://docs.google.com/uc?id=${logo.src.split('id=')[1].split('&')[0]}`;
+            // List of all possible Google Drive URL formats to try
+            const urlFormats = [
+                `https://drive.google.com/uc?export=view&id=${logoId}`,
+                `https://docs.google.com/uc?id=${logoId}`,
+                `https://drive.google.com/thumbnail?id=${logoId}&sz=w1000`,
+                `https://lh3.googleusercontent.com/d/${logoId}=w1000`
+            ];
+            
+            let currentAttempt = 0;
+            
+            function tryNextUrl() {
+                if (currentAttempt < urlFormats.length) {
+                    logo.src = urlFormats[currentAttempt];
+                    currentAttempt++;
                     
-                    // Final check after 3 seconds
+                    // Check if loaded successfully after 1 second
                     setTimeout(function() {
                         if (!logo.complete || logo.naturalWidth === 0) {
-                            logo.style.display = 'none';
-                            fallback.style.display = 'block';
+                            tryNextUrl();
                         }
-                    }, 3000);
+                    }, 1000);
+                } else {
+                    // All attempts failed - show fallback
+                    logo.style.display = 'none';
+                    fallback.style.display = 'block';
                 }
-            }, 1000);
+            }
+            
+            // Initial check after page loads
+            setTimeout(function() {
+                if (!logo.complete || logo.naturalWidth === 0) {
+                    tryNextUrl();
+                }
+            }, 500);
         });
     </script>
 </body>
