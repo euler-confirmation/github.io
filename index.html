@@ -3,136 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Euler Educators - Exam Completed</title>
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Euler Educators - Exam Completion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --system-blue: #007AFF;
-            --system-gray-6: #F2F2F7;
-            --system-gray-5: #E5E5EA;
-            --system-gray-4: #D1D1D6;
-            --system-gray-3: #C7C7CC;
-            --system-gray-2: #AEAEB2;
-            --system-gray-1: #8E8E93;
-            --system-label: #000000;
+            --primary: #2563eb;
+            --primary-light: #dbeafe;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-600: #4b5563;
+            --gray-800: #1f2937;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         
         body {
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--system-gray-6);
-            color: var(--system-label);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
+            background-color: var(--gray-100);
+            color: var(--gray-800);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
             -webkit-font-smoothing: antialiased;
         }
         
-        .card {
+        .container {
             width: 90%;
-            max-width: 620px;
-            background: white;
-            border-radius: 14px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            overflow: hidden;
-            margin: 20px;
-        }
-        
-        .header {
-            padding: 30px 30px 20px;
-            border-bottom: 1px solid var(--system-gray-5);
+            max-width: 640px;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
             text-align: center;
         }
         
         .logo {
-            width: 120px;
-            height: auto;
-            margin-bottom: 15px;
-            opacity: 0.9;
+            height: 80px;
+            margin-bottom: 1.5rem;
+            object-fit: contain;
         }
         
         h1 {
-            font-size: 28px;
-            font-weight: 600;
-            margin: 0 0 8px;
-            letter-spacing: -0.3px;
-        }
-        
-        .subheader {
-            font-size: 17px;
-            color: var(--system-gray-1);
-            font-weight: 400;
-            margin: 0;
-        }
-        
-        .content {
-            padding: 30px;
+            color: var(--gray-800);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.25;
         }
         
         .message {
-            font-size: 17px;
-            line-height: 1.5;
-            margin-bottom: 25px;
+            font-size: 1.1rem;
+            margin: 2rem 0;
+            text-align: center;
+            color: var(--gray-600);
+            line-height: 1.7;
+            padding: 0 1rem;
         }
         
-        .highlight {
-            background-color: rgba(0, 122, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 25px 0;
-            border-left: 3px solid var(--system-blue);
+        .highlight-box {
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin: 2.5rem 0;
+            text-align: left;
         }
         
         .footer {
-            padding: 20px 30px;
-            background-color: var(--system-gray-6);
-            text-align: center;
-            font-size: 13px;
-            color: var(--system-gray-1);
-            border-top: 1px solid var(--system-gray-5);
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-200);
+            font-size: 0.875rem;
+            color: var(--gray-600);
         }
         
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --system-gray-6: #1C1C1E;
-                --system-gray-5: #2C2C2E;
-                --system-label: #FFFFFF;
+        .bold {
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+        
+        .success-text {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.5rem;
+                width: 95%;
             }
             
-            body {
-                background-color: #000000;
+            h1 {
+                font-size: 1.5rem;
             }
             
-            .card {
-                background: var(--system-gray-6);
-            }
-            
-            .highlight {
-                background-color: rgba(10, 132, 255, 0.1);
+            .message {
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="header">
-            <img src="https://via.placeholder.com/120x40/007AFF/FFFFFF?text=Euler" alt="Euler Educators" class="logo">
-            <h1>Thanks for Participating</h1>
-            <p class="subheader">Semifinals Examination</p>
+    <div class="container">
+        <img src="https://drive.google.com/uc?export=view&id=1JXYwS1p88gOT6S03KVgCNRAHvqyhNpEh" alt="Euler Educators Logo" class="logo">
+        <h1>Thanks for Participating in Semifinals Exams</h1>
+        
+        <div class="message">
+            <p>You did a great job taking the bold step to participate in this online examination. Give yourself a pat on the back, take a seat and relax.</p>
         </div>
         
-        <div class="content">
-            <p class="message">
-                You did a great job taking the bold step to participate in this online examination. 
-                Give yourself a pat on the back, take a seat and relax.
-            </p>
-            
-            <div class="highlight">
-                Winners will be notified by the Lead Dynamics Team.<br>
-                Congrats in advance on your <strong>SUCCESS</strong>.
-            </div>
+        <div class="highlight-box">
+            <p>Winners will be notified by the Lead Dynamics Team.<br>
+            Congrats in advance on your <span class="success-text">SUCCESS</span>.</p>
         </div>
         
         <div class="footer">
