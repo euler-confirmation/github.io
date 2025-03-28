@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euler Educators - Exam Completed</title>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --system-blue: #007AFF;
+            --system-gray-6: #F2F2F7;
+            --system-gray-5: #E5E5EA;
+            --system-gray-4: #D1D1D6;
+            --system-gray-3: #C7C7CC;
+            --system-gray-2: #AEAEB2;
+            --system-gray-1: #8E8E93;
+            --system-label: #000000;
+        }
+        
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--system-gray-6);
+            color: var(--system-label);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .card {
+            width: 90%;
+            max-width: 620px;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin: 20px;
+        }
+        
+        .header {
+            padding: 30px 30px 20px;
+            border-bottom: 1px solid var(--system-gray-5);
+            text-align: center;
+        }
+        
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 0 0 8px;
+            letter-spacing: -0.3px;
+        }
+        
+        .subheader {
+            font-size: 17px;
+            color: var(--system-gray-1);
+            font-weight: 400;
+            margin: 0;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .message {
+            font-size: 17px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        
+        .highlight {
+            background-color: rgba(0, 122, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 3px solid var(--system-blue);
+        }
+        
+        .footer {
+            padding: 20px 30px;
+            background-color: var(--system-gray-6);
+            text-align: center;
+            font-size: 13px;
+            color: var(--system-gray-1);
+            border-top: 1px solid var(--system-gray-5);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --system-gray-6: #1C1C1E;
+                --system-gray-5: #2C2C2E;
+                --system-label: #FFFFFF;
+            }
+            
+            body {
+                background-color: #000000;
+            }
+            
+            .card {
+                background: var(--system-gray-6);
+            }
+            
+            .highlight {
+                background-color: rgba(10, 132, 255, 0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <img src="https://via.placeholder.com/120x40/007AFF/FFFFFF?text=Euler" alt="Euler Educators" class="logo">
+            <h1>Thanks for Participating</h1>
+            <p class="subheader">Semifinals Examination</p>
+        </div>
+        
+        <div class="content">
+            <p class="message">
+                You did a great job taking the bold step to participate in this online examination. 
+                Give yourself a pat on the back, take a seat and relax.
+            </p>
+            
+            <div class="highlight">
+                Winners will be notified by the Lead Dynamics Team.<br>
+                Congrats in advance on your <strong>SUCCESS</strong>.
+            </div>
+        </div>
+        
+        <div class="footer">
+            All rights reserved &copy; 2025 Euler Educators LLC
+        </div>
+    </div>
+</body>
+</html>
