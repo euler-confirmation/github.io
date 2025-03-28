@@ -50,7 +50,7 @@
         }
         
         .logo:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
         
         h1 {
@@ -77,12 +77,12 @@
             border-radius: 8px;
             margin: 2.5rem 0;
             text-align: left;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.3s ease;
         }
         
         .highlight-box:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.15);
         }
         
         .footer {
@@ -97,7 +97,6 @@
             color: var(--primary);
             font-weight: 600;
             position: relative;
-            display: inline-block;
         }
         
         .success-text::after {
@@ -109,13 +108,11 @@
             height: 2px;
             background-color: var(--primary);
             transform: scaleX(0);
-            transform-origin: right;
             transition: transform 0.3s ease;
         }
         
         .highlight-box:hover .success-text::after {
             transform: scaleX(1);
-            transform-origin: left;
         }
         
         @media (max-width: 640px) {
@@ -133,7 +130,7 @@
             }
             
             .logo {
-                height: 60px;
+                height: 70px;
             }
         }
     </style>
