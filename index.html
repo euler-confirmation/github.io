@@ -46,6 +46,11 @@
             height: 80px;
             margin-bottom: 1.5rem;
             object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
         }
         
         h1 {
@@ -72,6 +77,12 @@
             border-radius: 8px;
             margin: 2.5rem 0;
             text-align: left;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .highlight-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
         }
         
         .footer {
@@ -82,14 +93,29 @@
             color: var(--gray-600);
         }
         
-        .bold {
-            font-weight: 600;
-            color: var(--gray-800);
-        }
-        
         .success-text {
             color: var(--primary);
             font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .success-text::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        
+        .highlight-box:hover .success-text::after {
+            transform: scaleX(1);
+            transform-origin: left;
         }
         
         @media (max-width: 640px) {
@@ -105,12 +131,16 @@
             .message {
                 font-size: 1rem;
             }
+            
+            .logo {
+                height: 60px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://drive.google.com/uc?export=view&id=1JXYwS1p88gOT6S03KVgCNRAHvqyhNpEh" alt="Euler Educators Logo" class="logo">
+        <img src="https://drive.google.com/uc?export=view&id=1M_8ACbyZGIToyoSQOUDdIekO3j3vAmyX" alt="Euler Educators Logo" class="logo">
         <h1>Thanks for Participating in Semifinals Exams</h1>
         
         <div class="message">
